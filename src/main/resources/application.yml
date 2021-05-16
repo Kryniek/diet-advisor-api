@@ -1,0 +1,29 @@
+server:
+  port: 8999
+  servlet:
+    contextPath: /api/
+
+spring:
+  data:
+    dynamodb:
+      entity2ddl:
+        auto: create-only
+        readCapacity: 5
+        writeCapacity: 5
+  cache:
+    type: redis
+
+diet-advisor:
+  aws:
+    region: eu-west-1
+  kafka:
+    client:
+      id: diet-advisor-api
+    consumer:
+      group-id: api-group
+      auto-offset-reset: earliest
+    topic:
+      products-scrape-job: products-scrape-job-topic
+  redis:
+    cache:
+      ttl-seconds: 604800
