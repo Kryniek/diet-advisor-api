@@ -24,6 +24,7 @@ diet-advisor:
       auto-offset-reset: earliest
     topic:
       products-scrape-job: products-scrape-job-topic
+      recipes-scrape-job: recipes-scrape-job-topic
   redis:
     cache:
       ttl-seconds: 604800
